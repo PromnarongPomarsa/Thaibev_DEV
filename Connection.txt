@@ -1,0 +1,4 @@
+Thaibev-database (PostgresSQL)
+
+Connection: (Production)
+   URL: jdbc:postgresql://trolley.proxy.rlwy.net:25399/railway?user=postgres&password=poWJAwSZmagSBQEyBPONkdSxCfCQccYr
