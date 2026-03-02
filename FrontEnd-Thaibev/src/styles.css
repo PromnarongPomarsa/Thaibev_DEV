@@ -1,0 +1,65 @@
+.quiz-page {
+  --p-radiobutton-checked-background: #9ca3af;
+  --p-radiobutton-checked-border-color: #9ca3af;
+}
+
+.gray-radio .p-radiobutton-box {
+  border-color: #9ca3af;
+  background-color: rgb(195, 194, 194);
+}
+
+.p-radiobutton-box.p-highlight {
+  background: var(--primary-color);
+}
+
+.p-component-overlay {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  /* Removes any blur effect */
+}
+
+.p-dialog .p-dialog-content {
+  padding: 0 !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #dee2e6;
+
+}
+
+.p-dialog-header {
+  background-color: #16a34a !important;
+  justify-content: center !important;
+  position: relative;
+}
+
+.p-dialog-title {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.p-dialog-header-icons {
+  position: absolute !important;
+  right: 1.25rem;
+  /* Adjust this to move it further left/right */
+  top: 50%;
+  transform: translateY(-50%);
+  /* Keeps it vertically centered in the green bar */
+}
+
+.p-dialog-header-close-icon {
+  color: white !important;
+}
+
+.p-inputtext {
+  background-color: #ffffff !important;
+  color: #333333 !important; 
+}
+
+.p-dialog-header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+body, .p-component {
+    font-family: 'Inter', sans-serif !important;
+}

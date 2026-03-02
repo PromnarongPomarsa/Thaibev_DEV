@@ -1,0 +1,41 @@
+<div class="quiz-page grid p-0">
+  <p-card class="bg-gray-200 border-none shadow-0 w-full min-h-screen">
+    <ng-template pTemplate="header">
+      <div class="bg-green-600 text-white text-center font-bold p-2 text-lg">
+        IT 08-1
+      </div>
+    </ng-template>
+    <div class="p-6">
+
+      <button pButton type="button" [raised]="true" label="เพิ่มข้อสอบ" class="p-button-success mb-3" (click)="addQuestion()">
+      </button>
+
+      @if (questions.length > 0) {
+      @for (question of questions;track question.id) {
+      <div class="mb-4">
+        <div class="flex align-items-center gap-2 mb-2">
+          <span class="text-black-alpha-90 font-bold">{{questions.indexOf(question) + 1 }}. {{ question.question
+            }}</span>
+          <button pButton type="button" label="ลบ" class="p-button-danger p-button-sm"
+            (click)="deleteQuestion(question.id)">
+          </button>
+        </div>
+
+        @for (option of question.choiceItems; track option) {
+        <div class="field-radiobutton gray-radio">
+          <p-radioButton [name]="'q' + question.id" [value]="option" [(ngModel)]="question.answer">
+          </p-radioButton>
+          <label class="ml-2 text-black-alpha-90">{{ option.choiceText }}</label>
+        </div>
+        }
+      </div>
+      }
+      }
+      @else {
+      <div class="text-center text-back-500">
+        <span class="text-black-alpha-90">{{ nonItems }}</span>
+      </div>
+      }
+    </div>
+  </p-card>
+</div>

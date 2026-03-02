@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: P@ss123
+      POSTGRES_DB: Thaibev_Test
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./BackEnd-Thaibev
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=192.168.1.125;Database=Thaibev_Test;Username=postgres;Password=P@ss123
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./FrontEnd-Thaibev
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
